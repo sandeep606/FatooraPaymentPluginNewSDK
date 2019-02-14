@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-fatoorapaymentpluginnewsdk" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>FatooraPaymentPluginNewSDK</name>
+    <js-module name="FatooraPaymentPluginNewSDK" src="www/FatooraPaymentPluginNewSDK.js">
+        <clobbers target="FatooraPaymentPluginNewSDK" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="FatooraPaymentPluginNewSDK">
+                <param name="ios-package" value="FatooraPaymentPluginNewSDK" />
+            </feature>
+        </config-file>
+        <framework src="src/ios/MFSDK.framework" embed="true" custom="true" /> 
+        <source-file src="src/ios/MFSDK.framework" target-dir="lib" framework="true" />
+        <source-file src="src/ios/FatooraPaymentPluginNewSDK.m" />
+        
+    </platform>
+</plugin>
